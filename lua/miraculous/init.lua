@@ -19,9 +19,10 @@ local p = {
   miraculous_gold= "#FFD166",  -- the Miraculous jewels
   lucky_charm    = "#FF9F1C",  -- Lucky Charm shimmer
 
-  -- Parisian sky & environment
-  seine_blue     = "#7EC8E3",  -- the river Seine
-  sky_blue       = "#A2D2FF",  -- Paris morning sky
+  -- More pinks (because cute)
+  petal_pink     = "#F48FB1",  -- warm medium pink
+  sakura         = "#F8BBD0",  -- soft cherry blossom
+  info_blue      = "#7EC8E3",  -- kept for diagnostics
   eiffel_grey    = "#8D99AE",  -- steel of the Eiffel Tower
   soft_lilac     = "#CDB4DB",  -- twilight over Montmartre
 
@@ -84,13 +85,13 @@ function M.setup()
   hi("SpecialKey",       { fg = p.selection })
   hi("Whitespace",       { fg = p.selection })
   hi("EndOfBuffer",      { fg = p.bg })
-  hi("Directory",        { fg = p.seine_blue })
+  hi("Directory",        { fg = p.petal_pink })
   hi("Title",            { fg = p.rose, bold = true })
   hi("ErrorMsg",         { fg = p.ladybug_red, bold = true })
   hi("WarningMsg",       { fg = p.lucky_charm })
   hi("ModeMsg",          { fg = p.blush, bold = true })
   hi("MoreMsg",          { fg = p.stitch_green })
-  hi("Question",         { fg = p.seine_blue })
+  hi("Question",         { fg = p.petal_pink })
   hi("WildMenu",         { fg = p.bg, bg = p.rose })
 
   ---------------------------------------------------------------------------
@@ -117,9 +118,9 @@ function M.setup()
   hi("Function",         { fg = p.rose, bold = true })
   hi("Identifier",       { fg = p.fg })
 
-  -- Strings are Seine blue — flowing and lyrical
-  hi("String",           { fg = p.seine_blue })
-  hi("Character",        { fg = p.sky_blue })
+  -- Strings are petal pink — soft and sweet
+  hi("String",           { fg = p.petal_pink })
+  hi("Character",        { fg = p.sakura })
 
   -- Types are soft lilac — structured yet beautiful
   hi("Type",             { fg = p.soft_lilac })
@@ -153,7 +154,7 @@ function M.setup()
 
   -- Errors are unmissable
   hi("Error",            { fg = p.ladybug_red, undercurl = true })
-  hi("Underlined",       { fg = p.seine_blue, underline = true })
+  hi("Underlined",       { fg = p.petal_pink, underline = true })
 
   ---------------------------------------------------------------------------
   -- Treesitter
@@ -165,10 +166,10 @@ function M.setup()
   hi("@constant",             { fg = p.tikki_red })
   hi("@constant.builtin",     { fg = p.lucky_charm })
   hi("@module",               { fg = p.soft_lilac })
-  hi("@string",               { fg = p.seine_blue })
-  hi("@string.escape",        { fg = p.sky_blue })
-  hi("@string.regex",         { fg = p.sky_blue })
-  hi("@character",            { fg = p.sky_blue })
+  hi("@string",               { fg = p.petal_pink })
+  hi("@string.escape",        { fg = p.sakura })
+  hi("@string.regex",         { fg = p.sakura })
+  hi("@character",            { fg = p.sakura })
   hi("@number",               { fg = p.miraculous_gold })
   hi("@boolean",              { fg = p.lucky_charm })
   hi("@float",                { fg = p.miraculous_gold })
@@ -198,25 +199,30 @@ function M.setup()
   hi("@text.title",           { fg = p.rose, bold = true })
   hi("@text.strong",          { bold = true })
   hi("@text.emphasis",        { italic = true })
-  hi("@text.uri",             { fg = p.seine_blue, underline = true })
+  hi("@text.uri",             { fg = p.petal_pink, underline = true })
 
   ---------------------------------------------------------------------------
   -- LSP Diagnostics
   ---------------------------------------------------------------------------
   hi("DiagnosticError",       { fg = p.ladybug_red })
   hi("DiagnosticWarn",        { fg = p.lucky_charm })
-  hi("DiagnosticInfo",        { fg = p.seine_blue })
+  hi("DiagnosticInfo",        { fg = p.info_blue })
   hi("DiagnosticHint",        { fg = p.stitch_green })
   hi("DiagnosticUnderlineError", { undercurl = true, sp = p.ladybug_red })
   hi("DiagnosticUnderlineWarn",  { undercurl = true, sp = p.lucky_charm })
-  hi("DiagnosticUnderlineInfo",  { undercurl = true, sp = p.seine_blue })
+  hi("DiagnosticUnderlineInfo",  { undercurl = true, sp = p.info_blue })
   hi("DiagnosticUnderlineHint",  { undercurl = true, sp = p.stitch_green })
+
+  ---------------------------------------------------------------------------
+  -- LSP Inlay Hints
+  ---------------------------------------------------------------------------
+  hi("LspInlayHint",            { fg = "#6C7A96", bg = "#1E1E36", italic = true })
 
   ---------------------------------------------------------------------------
   -- Git Signs
   ---------------------------------------------------------------------------
   hi("GitSignsAdd",           { fg = p.stitch_green })
-  hi("GitSignsChange",        { fg = p.seine_blue })
+  hi("GitSignsChange",        { fg = p.petal_pink })
   hi("GitSignsDelete",        { fg = p.ladybug_red })
 
   ---------------------------------------------------------------------------
@@ -226,7 +232,7 @@ function M.setup()
   hi("TelescopePromptBorder", { fg = p.ladybug_red })
   hi("TelescopePromptTitle",  { fg = p.ladybug_red, bold = true })
   hi("TelescopePreviewTitle", { fg = p.stitch_green, bold = true })
-  hi("TelescopeResultsTitle", { fg = p.seine_blue, bold = true })
+  hi("TelescopeResultsTitle", { fg = p.petal_pink, bold = true })
   hi("TelescopeSelection",   { bg = p.selection })
   hi("TelescopeMatching",     { fg = p.miraculous_gold, bold = true })
 
@@ -240,11 +246,11 @@ function M.setup()
   -- Neotree / Nvimtree
   ---------------------------------------------------------------------------
   hi("NeoTreeDirectoryIcon",  { fg = p.rose })
-  hi("NeoTreeDirectoryName",  { fg = p.seine_blue })
+  hi("NeoTreeDirectoryName",  { fg = p.petal_pink })
   hi("NeoTreeRootName",       { fg = p.ladybug_red, bold = true })
   hi("NeoTreeFileName",       { fg = p.fg })
   hi("NeoTreeGitAdded",       { fg = p.stitch_green })
-  hi("NeoTreeGitModified",    { fg = p.seine_blue })
+  hi("NeoTreeGitModified",    { fg = p.petal_pink })
   hi("NeoTreeGitDeleted",     { fg = p.ladybug_red })
 
 end
