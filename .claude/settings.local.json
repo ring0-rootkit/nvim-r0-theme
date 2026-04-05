@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(which nvim:*)",
+      "Bash(nvim --headless -u NONE --cmd \"set rtp+=/root/miraculous.nvim\" -c \"colorscheme miraculous\" -c \"echo 'OK'\" -c \"qa!\" 2>&1)"
+    ]
+  }
+}
