@@ -5,8 +5,8 @@ local p = {
   -- Core Ladybug colors
   ladybug_red    = "#E5383B",  -- her suit, her power
   deep_red       = "#BA181B",  -- darker accent
-  spot_black     = "#1A1A2E",  -- ladybug spots, deep night
-  midnight       = "#16213E",  -- Paris rooftops at midnight
+  spot_black     = "#1E1A1B",  -- ladybug spots, deep night
+  midnight       = "#231F21",  -- Paris rooftops at midnight
 
   -- Marinette's pinks (her room, her style)
   blush          = "#F2ACB9",  -- soft blush pink
@@ -33,14 +33,14 @@ local p = {
   ribbon_purple  = "#9B5DE5",  -- ribbon accents
 
   -- Foundations
-  bg             = "#0F0F1A",  -- deep Parisian night
-  bg_lighter     = "#1A1A2E",  -- slightly lifted
-  bg_float       = "#212140",  -- floating windows
+  bg             = "#141011",  -- Marinette's charcoal jacket, deepest shadow
+  bg_lighter     = "#1E1A1B",  -- slightly lifted charcoal
+  bg_float       = "#2B2728",  -- floating windows
   fg             = "#EDF2F4",  -- clean text
   fg_dim         = "#8D99AE",  -- dimmed text
   comment        = "#6C7A96",  -- subtle commentary
-  selection      = "#2D2D4A",  -- selected text bg
-  line           = "#1E1E36",  -- cursor line
+  selection      = "#353132",  -- selected text bg
+  line           = "#191516",  -- cursor line
   none           = "NONE",
 }
 
@@ -216,7 +216,7 @@ function M.setup()
   ---------------------------------------------------------------------------
   -- LSP Inlay Hints
   ---------------------------------------------------------------------------
-  hi("LspInlayHint",            { fg = "#6C7A96", bg = "#1E1E36", italic = true })
+  hi("LspInlayHint",            { fg = "#6C7A96", bg = "#191516", italic = true })
 
   ---------------------------------------------------------------------------
   -- Git Signs
