@@ -2,20 +2,20 @@ local M = {}
 
 -- Marinette's palette
 local p = {
-  -- Core Ladybug colors
-  ladybug_red    = "#E5383B",  -- her suit, her power
-  deep_red       = "#BA181B",  -- darker accent
+  -- Core Ladybug colors (kept for errors/diagnostics)
+  ladybug_red    = "#E5383B",  -- her suit — reserved for errors
   spot_black     = "#181616",  -- ladybug spots, deep night
   midnight       = "#1D1A1B",  -- Paris rooftops at midnight
 
-  -- Marinette's pinks (her room, her style)
+  -- Marinette's pinks (her room, her style, her keywords~)
   blush          = "#F2ACB9",  -- soft blush pink
   rose           = "#E76F8B",  -- her signature pink
-  hot_pink       = "#D63384",  -- bold accent
+  hot_pink       = "#D63384",  -- bold keyword pink
+  deep_pink      = "#C2185B",  -- deep magenta-pink accent
   light_pink     = "#F8D7E0",  -- gentle highlight
 
   -- Tikki & magic
-  tikki_red      = "#FF6B6B",  -- Tikki's warm glow
+  tikki_pink     = "#FF80AB",  -- Tikki's warm pink glow
   miraculous_gold= "#FFD166",  -- the Miraculous jewels
   lucky_charm    = "#FF9F1C",  -- Lucky Charm shimmer
 
@@ -32,7 +32,7 @@ local p = {
   stitch_green   = "#95D5B2",  -- thread & accents
   ribbon_purple  = "#9B5DE5",  -- ribbon accents
 
-  -- Foundations
+  -- Foundations (don't touch the bg~)
   bg             = "#0E0D0D",  -- Marinette's S6 near-black blazer, deepest shadow
   bg_lighter     = "#181616",  -- slightly lifted charcoal
   bg_float       = "#232020",  -- floating windows
@@ -55,7 +55,7 @@ function M.setup()
   hi("Normal",           { fg = p.fg, bg = p.bg })
   hi("NormalFloat",      { fg = p.fg, bg = p.bg_float })
   hi("FloatBorder",      { fg = p.rose, bg = p.bg_float })
-  hi("Cursor",           { fg = p.bg, bg = p.ladybug_red })
+  hi("Cursor",           { fg = p.bg, bg = p.hot_pink })
   hi("CursorLine",       { bg = p.line })
   hi("CursorColumn",     { bg = p.line })
   hi("ColorColumn",      { bg = p.line })
@@ -68,7 +68,7 @@ function M.setup()
   hi("StatusLineNC",     { fg = p.fg_dim, bg = p.bg })
   hi("TabLine",          { fg = p.fg_dim, bg = p.bg_lighter })
   hi("TabLineFill",      { bg = p.bg })
-  hi("TabLineSel",       { fg = p.fg, bg = p.ladybug_red, bold = true })
+  hi("TabLineSel",       { fg = p.fg, bg = p.rose, bold = true })
   hi("Pmenu",            { fg = p.fg, bg = p.bg_float })
   hi("PmenuSel",         { fg = p.fg, bg = p.selection })
   hi("PmenuSbar",        { bg = p.bg_lighter })
@@ -77,7 +77,7 @@ function M.setup()
   hi("VisualNOS",        { bg = p.selection })
   hi("Search",           { fg = p.bg, bg = p.miraculous_gold })
   hi("IncSearch",        { fg = p.bg, bg = p.lucky_charm })
-  hi("CurSearch",        { fg = p.bg, bg = p.ladybug_red })
+  hi("CurSearch",        { fg = p.bg, bg = p.hot_pink })
   hi("MatchParen",       { fg = p.miraculous_gold, bold = true, underline = true })
   hi("Folded",           { fg = p.comment, bg = p.bg_lighter })
   hi("FoldColumn",       { fg = p.comment, bg = p.bg })
@@ -99,18 +99,18 @@ function M.setup()
   ---------------------------------------------------------------------------
   hi("DiffAdd",          { bg = "#1a2e1a" })
   hi("DiffChange",       { bg = "#2e2e1a" })
-  hi("DiffDelete",       { fg = p.deep_red, bg = "#2e1a1a" })
+  hi("DiffDelete",       { fg = p.deep_pink, bg = "#2e1a1a" })
   hi("DiffText",         { bg = "#3e3e2a" })
 
   ---------------------------------------------------------------------------
-  -- Syntax (where the magic happens)
+  -- Syntax (where the magic happens~)
   ---------------------------------------------------------------------------
-  -- Keywords glow ladybug red — bold and confident, like Marinette in the suit
-  hi("Keyword",          { fg = p.ladybug_red, bold = true })
-  hi("Statement",        { fg = p.ladybug_red })
-  hi("Conditional",      { fg = p.ladybug_red })
-  hi("Repeat",           { fg = p.ladybug_red })
-  hi("Exception",        { fg = p.deep_red })
+  -- Keywords glow pink — bold and cute, like Marinette herself
+  hi("Keyword",          { fg = p.hot_pink, bold = true })
+  hi("Statement",        { fg = p.hot_pink })
+  hi("Conditional",      { fg = p.hot_pink })
+  hi("Repeat",           { fg = p.hot_pink })
+  hi("Exception",        { fg = p.deep_pink })
   hi("Operator",         { fg = p.blush })
   hi("Label",            { fg = p.rose })
 
@@ -133,8 +133,8 @@ function M.setup()
   hi("Float",            { fg = p.miraculous_gold })
   hi("Boolean",          { fg = p.lucky_charm })
 
-  -- Constants carry Tikki's warm red
-  hi("Constant",         { fg = p.tikki_red })
+  -- Constants carry Tikki's warm pink glow
+  hi("Constant",         { fg = p.tikki_pink })
   hi("Define",           { fg = p.hot_pink })
   hi("Macro",            { fg = p.hot_pink })
   hi("PreProc",          { fg = p.hot_pink })
@@ -160,10 +160,10 @@ function M.setup()
   -- Treesitter
   ---------------------------------------------------------------------------
   hi("@variable",              { fg = p.fg })
-  hi("@variable.builtin",     { fg = p.tikki_red, italic = true })
+  hi("@variable.builtin",     { fg = p.tikki_pink, italic = true })
   hi("@variable.parameter",   { fg = p.light_pink })
   hi("@variable.member",      { fg = p.blush })
-  hi("@constant",             { fg = p.tikki_red })
+  hi("@constant",             { fg = p.tikki_pink })
   hi("@constant.builtin",     { fg = p.lucky_charm })
   hi("@module",               { fg = p.soft_lilac })
   hi("@string",               { fg = p.petal_pink })
@@ -178,13 +178,13 @@ function M.setup()
   hi("@function.macro",       { fg = p.hot_pink })
   hi("@method",               { fg = p.rose })
   hi("@constructor",          { fg = p.soft_lilac, bold = true })
-  hi("@keyword",              { fg = p.ladybug_red, bold = true })
-  hi("@keyword.function",     { fg = p.ladybug_red })
-  hi("@keyword.return",       { fg = p.deep_red, bold = true })
+  hi("@keyword",              { fg = p.hot_pink, bold = true })
+  hi("@keyword.function",     { fg = p.hot_pink })
+  hi("@keyword.return",       { fg = p.deep_pink, bold = true })
   hi("@keyword.operator",     { fg = p.blush })
-  hi("@conditional",          { fg = p.ladybug_red })
-  hi("@repeat",               { fg = p.ladybug_red })
-  hi("@exception",            { fg = p.deep_red })
+  hi("@conditional",          { fg = p.hot_pink })
+  hi("@repeat",               { fg = p.hot_pink })
+  hi("@exception",            { fg = p.deep_pink })
   hi("@type",                 { fg = p.soft_lilac })
   hi("@type.builtin",         { fg = p.soft_lilac, italic = true })
   hi("@property",             { fg = p.blush })
@@ -223,14 +223,14 @@ function M.setup()
   ---------------------------------------------------------------------------
   hi("GitSignsAdd",           { fg = p.stitch_green })
   hi("GitSignsChange",        { fg = p.petal_pink })
-  hi("GitSignsDelete",        { fg = p.ladybug_red })
+  hi("GitSignsDelete",        { fg = p.deep_pink })
 
   ---------------------------------------------------------------------------
   -- Telescope
   ---------------------------------------------------------------------------
   hi("TelescopeBorder",       { fg = p.rose })
-  hi("TelescopePromptBorder", { fg = p.ladybug_red })
-  hi("TelescopePromptTitle",  { fg = p.ladybug_red, bold = true })
+  hi("TelescopePromptBorder", { fg = p.rose })
+  hi("TelescopePromptTitle",  { fg = p.hot_pink, bold = true })
   hi("TelescopePreviewTitle", { fg = p.stitch_green, bold = true })
   hi("TelescopeResultsTitle", { fg = p.petal_pink, bold = true })
   hi("TelescopeSelection",   { bg = p.selection })
@@ -247,11 +247,11 @@ function M.setup()
   ---------------------------------------------------------------------------
   hi("NeoTreeDirectoryIcon",  { fg = p.rose })
   hi("NeoTreeDirectoryName",  { fg = p.petal_pink })
-  hi("NeoTreeRootName",       { fg = p.ladybug_red, bold = true })
+  hi("NeoTreeRootName",       { fg = p.rose, bold = true })
   hi("NeoTreeFileName",       { fg = p.fg })
   hi("NeoTreeGitAdded",       { fg = p.stitch_green })
   hi("NeoTreeGitModified",    { fg = p.petal_pink })
-  hi("NeoTreeGitDeleted",     { fg = p.ladybug_red })
+  hi("NeoTreeGitDeleted",     { fg = p.deep_pink })
 
 end
 
