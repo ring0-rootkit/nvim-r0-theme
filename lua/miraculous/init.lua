@@ -33,7 +33,7 @@ local p = {
 	ribbon_purple = "#9B5DE5", -- ribbon accents
 
 	-- Foundations (don't touch the bg~)
-	bg = "#000000", -- Marinette's S6 near-black blazer, deepest shadow
+	bg = "#0E0D0D", -- Marinette's S6 near-black blazer, deepest shadow
 	bg_lighter = "#0E0D0D", -- slightly lifted charcoal
 	bg_float = "#181616", -- floating windows
 	fg = "#EDF2F4", -- clean text
