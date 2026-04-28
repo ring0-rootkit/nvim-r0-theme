@@ -10,7 +10,7 @@ local p = {
 	-- Marinette's pinks (her room, her style, her keywords~)
 	blush = "#F2ACB9", -- soft blush pink
 	rose = "#E76F8B", -- her signature pink
-	keyword = "#FF80AB", -- bold keyword pink
+	keyword = "#FF99BA", -- bold keyword pink
 	deep_pink = "#C2185B", -- deep magenta-pink accent
 	light_pink = "#F8D7E0", -- gentle highlight
 
